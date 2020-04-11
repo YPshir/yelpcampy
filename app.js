@@ -10,6 +10,7 @@ var express        = require("express"),
     seedDB         = require("./seeds"),
     Comment        = require("./models/comment"),
     User           = require("./models/user");
+
 const PORT = process.env.PORT||3000;
 //requring routes
 var commentRoutes = require("./routes/comments"),
