@@ -10,7 +10,7 @@ var express        = require("express"),
     seedDB         = require("./seeds"),
     Comment        = require("./models/comment"),
     User           = require("./models/user");
-
+const PORT = process.env.PORT||3000;
 //requring routes
 var commentRoutes = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
@@ -18,7 +18,8 @@ var commentRoutes = require("./routes/comments"),
 
 
 //mongoose.connect("mongodb://localhost/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true});
-mongoose.connect("mongodb+srv://ypshir:6810016@cluster0-fxp9u.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true});
+//mongoose.connect("mongodb+srv://ypshir:6810016@cluster0-fxp9u.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true , useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine","ejs");
@@ -50,6 +51,6 @@ app.use("/",indexRoutes);
 app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
-app.listen(3000,function(){
+app.listen(PORT,function(){
     console.log("The YelpCamp Server Has Started!");
 });
