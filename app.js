@@ -19,7 +19,6 @@ var commentRoutes = require("./routes/comments"),
 
 
 //mongoose.connect("mongodb://localhost/yelp_camp",{ useNewUrlParser: true , useUnifiedTopology: true});
-//mongoose.connect("mongodb+srv://ypshir:6810016@cluster0-fxp9u.mongodb.net/test?retryWrites=true&w=majority",{ useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.connect(process.env.DATABASEURL,{ useNewUrlParser: true , useUnifiedTopology: true});
 
 app.use(bodyParser.urlencoded({extended:true}));
