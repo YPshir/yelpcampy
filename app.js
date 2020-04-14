@@ -29,7 +29,7 @@ app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-    secret:"im gay",
+    secret:"This is a secret",
     resave: false,
     saveUninitialized: false
 }));
