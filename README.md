@@ -45,4 +45,4 @@ Create, view, edit and delete posts and comments.
 
 
 #### Deployment
-[Heroku](https://id.heroku.com/login)
+[Heroku](https://www.heroku.com/platform)
